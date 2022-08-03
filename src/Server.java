@@ -16,12 +16,10 @@ public class Server implements Runnable{
     private boolean done;
     private ExecutorService pool;
 
-
     public Server(){
         connections = new ArrayList<>();
         done = false;
     }
-
 
     @Override
     public void run() {
@@ -65,12 +63,6 @@ public class Server implements Runnable{
 
     }
 
-
-
-
-
-
-
     class ConnectionHandler implements Runnable{
         private Socket client;
         private BufferedReader in;
@@ -80,7 +72,6 @@ public class Server implements Runnable{
         public ConnectionHandler(Socket client){
             this.client = client;
         }
-
 
         @Override
         public void run(){
@@ -115,7 +106,6 @@ public class Server implements Runnable{
             }
 
         }
-
         public void sendMessage(String message){
             out.println(message);
         }
@@ -137,6 +127,5 @@ public class Server implements Runnable{
         Server server = new Server();
         System.out.println("===server initialized, running...===");
         server.run();
-
     }
 }

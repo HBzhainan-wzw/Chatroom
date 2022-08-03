@@ -28,6 +28,7 @@ public class Client implements Runnable{
             shutdown();
         }
     }
+
     public void shutdown(){
         done = true;
         try{
